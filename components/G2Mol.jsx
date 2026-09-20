@@ -39,15 +39,6 @@ const G2Mol = () => {
     localStorage.setItem("molUnit", molUnit);
   }, [molUnit]);
 
-  useEffect(() => {
-    if (mass !== "" && basePairCount !== "") {
-      const moles = calculateMoles(mass, basePairCount);
-      setMolar(moles);
-    } else {
-      setMolar(0);
-    }
-  }, [mass, basePairCount, massUnit, bpUnit, molUnit]);
-
   function calculateMoles(mass, basePairCount) {
     const gPerMol = 660;
 
